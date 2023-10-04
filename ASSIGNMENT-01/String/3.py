@@ -1,10 +1,23 @@
-s=input("please enter a string:")
+s = input("Please enter a string:")
 
-for i in range(0,len(s)):
-    if ord(i) >= ord('A') and ord(i) <= ord('Z'):
-        idx1=i
+idx1 = -1
+idx2 = -1
+
+# Find the position of the first uppercase letter
+for i in range(len(s)):
+    if ord('A') <= ord(s[i]) <= ord('Z'):
+        idx1 = i
         break
-for i in range(0,len(s)-1,-1):
-    if ord(i) >= ord('A') and ord(i) <= ord('Z'):
-        idx2=i
+
+# Find the position of the last uppercase letter
+for i in range(len(s) - 1, -1, -1):
+    if ord('A') <= ord(s[i]) <= ord('Z'):
+        idx2 = i
         break
+
+# Check if both uppercase letters were found
+if idx1 != -1 and idx2 != -1:
+    result = s[idx1 + 1:idx2]
+    print(result)
+else:
+    print("BLANK")
