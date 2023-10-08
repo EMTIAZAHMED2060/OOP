@@ -1,44 +1,33 @@
-# Sample input passwords
-passwords = ["ohMyBR@CU", "ohmybracu", "OhMyBR@CU20"]
+inp = input()
+string = ''
+special_characters = "$#@"
+lower = False
+upper = False
+special = False
+digit = False
 
-for password in passwords:
-    lowercase_missing = True
-    uppercase_missing = True
-    digit_missing = True
-    special_missing = True
+for i in inp:
+    i = ord(i)
+    if 57 >= i >= 48:
+        digit = True
+    elif 90 >= i >= 65:
+        upper = True
+    elif 122 >= i >= 97:
+        lower = True
+    else:
+        if chr(i) in special_characters:
+            special = True
 
-    # Check for lowercase letters
-    for c in password:
-        if 'a' <= c <= 'z':
-            lowercase_missing = False
-            break
+if not lower:
+    string += 'lowercase letters missing, '
+if not upper:
+    string += 'uppercase letters missing, '
+if not digit:
+    string += 'digits missing, '
+if not special:
+    string += 'special characters missing, '
 
-    # Check for uppercase letters
-    for c in password:
-        if 'A' <= c <= 'Z':
-            uppercase_missing = False
-            break
-
-    # Check for digits
-    for c in password:
-        if '0' <= c <= '9':
-            digit_missing = False
-            break
-
-    # Check for special characters
-    for c in password:
-        if c in "_,$,#,@":
-            special_missing = False
-            break
-
-    if lowercase_missing:
-        print("Lowercase missing")
-    if uppercase_missing:
-        print("Uppercase missing")
-    if digit_missing:
-        print("Digit missing")
-    if special_missing:
-        print("Special character missing")
-
-    if not (lowercase_missing or uppercase_missing or digit_missing or special_missing):
-        print("OK")
+if string == '':
+    print('OK')
+else:
+    print(string[:-2])  # Remove the trailing comma and space

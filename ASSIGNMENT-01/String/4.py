@@ -1,6 +1,6 @@
 # Input strings
-string1 = "harry"
-string2 = "hermione"
+string1 = "dean"
+string2 = "tom"
 
 # Initialize an empty string to store the result
 result = ""
@@ -12,5 +12,11 @@ for char in string1:
         # Append the common character to the result
         result += char
 
-# Print the resulting string
-print(result)
+# Check if there are common characters
+if result:
+    # Print the resulting string if there are common characters
+    print(result)
+else:
+    # Print "Nothing in common" if there are no common characters
+    print("Nothing in common")
+
