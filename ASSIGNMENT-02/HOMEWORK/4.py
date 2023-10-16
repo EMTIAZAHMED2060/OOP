@@ -1,6 +1,6 @@
-def username_generator(first_name, last_name, student_id, middle_name=""):
+def username_generator(first_name, last_name, student_id, middle_name="None"):
     first_part = first_name[:3].upper()
-    if middle_name:
+    if middle_name!=None:
         middle_part = middle_name
     else:
         middle_part = ""
@@ -16,4 +16,4 @@ middle_name = input("Middle Name: ")
 last_name = input("Last Name: ")
 student_id = (input("Student ID:"))
 
-print(username_generator(first_name, last_name, student_id))
+print(username_generator(first_name, last_name, student_id, middle_name))
