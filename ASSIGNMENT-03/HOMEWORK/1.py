@@ -32,6 +32,17 @@ pkg = CellPackage(150, '6 GB', 99, 20, '7%', 7)
 print('============= Package 1 =============')
 pkg.print_all()
 # Subtask 2: Check each attribute and print
+if pkg.data != 0:
+  print(f"Data = {pkg.data} MB")
+if pkg.talk_time != 0:
+  print(f"Talktime = {pkg.talk_time} Minutes")
+if pkg.messages != 0:
+  print(f"SMS/MMS = {pkg.messages}")
+print(f"Validity = {pkg.validity} Days\n--> Price = {pkg.price} tk")
+if pkg.cashback != 0:
+  print(f"Buy now to get {pkg.cashback} tk cashback.")
+pkg2 = CellPackage(700, '35 GB', 700, 0, '10%', 30)
+
 
 pkg2 = CellPackage(700, '35 GB', 700, 0, '10%', 30)
 print('============= Package 2 =============')

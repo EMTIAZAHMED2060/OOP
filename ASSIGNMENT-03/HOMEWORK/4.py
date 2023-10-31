@@ -41,7 +41,9 @@ class abcTech:
             return base_salary
 
 # Driver Code
-b1 = abcTech("Tamim Hasan", "Software Engineer", "Android Development")
+print("-------------------------")
+b1 =abcTech("Tamim Hasan", "Software Engineer", "Android Development")
+print("-------------------------")
 b1.addProgrammingSkills(["Java", "Python"])
 b1.addProgrammingSkills(["Dart", "C++"])
 b1.addFrameworks(["Express.js", "React"])
@@ -49,7 +51,9 @@ b1.printInfo()
 print("-------------------------")
 print(f"Your salary for this month is Tk. {b1.calculateSalary(45000, 156)}")
 print("-------------------------")
-b2 = abcTech("Jahin Khandoker", "Senior Developer", "App Development")
+print("-------------------------")
+b2 =abcTech("Jahin Khandoker", "Senior Developer", "App Development")
+print("-------------------------")
 b2.addProgrammingSkills(["Java", "Dart", "Swift"])
 b2.addFrameworks(["Flutter", "React Native"])
 b2.addFrameworks(["Xamarin"])
