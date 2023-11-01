@@ -11,7 +11,7 @@ class Sphere:
     def printDetails(self):
         print(f"Sphere ID: {self.sphere_id}")
         print(f"Color: {self.color}")
-        print(f"Volume: {self.volumef}")
+        print(f"Volume: {self.volume}")
 
     def merge_sphere(self, *spheres):
         print("Spheres are being merged")
