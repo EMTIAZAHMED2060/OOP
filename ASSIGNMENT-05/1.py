@@ -1,3 +1,7 @@
+class Course:
+    def __init__(self, name):
+        self.name = name
+
 class Teacher:
     def __init__(self, name, department):
         self.__name = name
@@ -17,9 +21,6 @@ class Teacher:
             print(course.name)
 
 
-class Course:
-    def __init__(self, name):
-        self.name = name
 
     
 t1 = Teacher("Saad Abdullah", "CSE")

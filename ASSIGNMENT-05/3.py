@@ -10,11 +10,9 @@ class Spaceship:
         available_capacity = self.capacity - self.current_cargo_weight
 
         if available_capacity >= cargo_weight:
-            # There is enough space for the cargo
             self.cargo.append(cargo.get_name())
             self.current_cargo_weight += cargo_weight
         else:
-            # Not enough space for the cargo
             excess_weight = cargo_weight - available_capacity
             print(f"Warning: Unable to load {cargo.get_name()} inside {self.name}. "
                   f"Exceeds capacity by {excess_weight}.")
