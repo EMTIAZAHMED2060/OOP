@@ -3,58 +3,49 @@ class SultansDine:
     total_sell = 0
     branch_list = []
 
+    def __init__(self, branch_name):
+        self.branch = branch_name
+        SultansDine.total_branches += 1
+
+    def sell_quantity(self, quantity):
+        if quantity < 10:
+            self.sell = quantity * 300
+        elif quantity < 20:
+            self.sell = quantity * 350
+        else:
+            self.sell = quantity * 400
+        SultansDine.total_sell += self.sell
+
+    def branch_information(self):
+        print(f"Branch Name: {self.branch}\nBranch Sell: {self.sell} Taka")
+        SultansDine.branch_list.append(self)
+        
     @classmethod
     def details(cls):
-        print(f"Total Number of branch(s): {cls.total_branches}")
-        print(f"Total Sell: {cls.total_sell} Taka")
+        print(f"Total Number of branch(s): {cls.total_branches}\nTotal Sell: {cls.total_sell} Taka")
+        for branch in cls.branch_list:
+            print(f"Branch Name: {branch.branch}, Branch Sell: {branch.sell} Taka\nBranch consists of total sell's: {round((branch.sell/cls.total_sell)*100,2)}%")
 
-    def __init__(self, branch_name):
-        self.branch_name = branch_name
-        self.branch_sell = 0
-        SultansDine.total_branches += 1
-        SultansDine.branch_list.append(self)
-
-    def sellQuantity(self, quantity):
-        if quantity < 10:
-            self.branch_sell = quantity * 300
-        elif quantity < 20:
-            self.branch_sell = quantity * 350
-        else:
-            self.branch_sell = quantity * 400
-        SultansDine.total_sell += self.branch_sell
-
-    def branchInformation(self):
-        print(f"Branch Name: {self.branch_name}")
-        print(f"Branch Sell: {self.branch_sell} Taka")
-        for branch in SultansDine.branch_list:
-            sell_percentage = (branch.branch_sell / SultansDine.total_sell) * 100
-            print(f"Branch Name: {branch.branch_name}, Branch Sell: {branch.branch_sell} Taka")
-            print(f"Branch consists of total sell's: {sell_percentage:.2f}%")
-        print("================================")
-
-# Test the class
 SultansDine.details()
 print('########################')
 dhanmondi = SultansDine('Dhanmondi')
-dhanmondi.sellQuantity(25)
-dhanmondi.branchInformation()
+dhanmondi.sell_quantity(25)
+dhanmondi.branch_information()
 print('-----------------------------------------')
 SultansDine.details()
 
 print('========================')
 
 baily_road = SultansDine('Baily Road')
-baily_road.sellQuantity(15)
-baily_road.branchInformation()
+baily_road.sell_quantity(15)
+baily_road.branch_information()
 print('-----------------------------------------')
 SultansDine.details()
 
 print('========================')
 
 gulshan = SultansDine('Gulshan')
-gulshan.sellQuantity(9)
-gulshan.branchInformation()
+gulshan.sell_quantity(9)
+gulshan.branch_information()
 print('-----------------------------------------')
 SultansDine.details()
-
-
