@@ -1,28 +1,28 @@
 class Passenger:
     count = 0
-    base_fare = 450
-    extra_charge_21_50 = 50
-    extra_charge_above_50 = 100
-    weight_allowance = 20
+    bf = 450
+    ext21 = 50
+    ecb50 = 100
+    wa = 20
 
     def __init__(self, name):
         self.name = name
-        self.bag_weight = 0
+        self.bw = 0
         Passenger.count += 1
 
     def set_bag_weight(self, weight):
         self.bag_weight = weight
 
     def calculate_fare(self):
-        fare = Passenger.base_fare
+        fare = Passenger.bf
 
-        if self.bag_weight > Passenger.weight_allowance:
-            excess_weight = self.bag_weight - Passenger.weight_allowance
+        if self.bw > Passenger.wa:
+            excess_weight = self.bw - Passenger.wa
 
             if excess_weight <= 30:
-                fare += Passenger.extra_charge_21_50
+                fare += Passenger.ext21
             else:
-                fare += Passenger.extra_charge_above_50
+                fare += Passenger.ecb50
 
         return fare
 

@@ -1,20 +1,20 @@
 class Travel:
     count = 0
 
-    def __init__(self, source, destination):
-        self.source = source
-        self.destination = destination
-        self.time = "1:00"  # Default flight time
+    def __init__(self, s, d):
+        self.source = s
+        self.destination = d  
+        self.time = "1:00" 
         Travel.count += 1
 
-    def set_time(self, time):
-        self.time = f"{time:02d}:00"
+    def set_time(self, t):
+        self.time = f"{t:02d}:00" 
 
-    def set_source(self, source):
-        self.source = source
+    def set_source(self, s):
+        self.source = s
 
-    def set_destination(self, destination):
-        self.destination = destination
+    def set_destination(self, d):
+        self.destination = d 
 
     def display_travel_info(self):
         return f"Source: {self.source}\nDestination: {self.destination}\nFlight Time: {self.time}\n======================="

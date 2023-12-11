@@ -1,34 +1,34 @@
 class NikeBangladesh:
-    branches = []
-    stocked = {'Air Jordan': 0, 'Cortez': 0, 'Zoom Kobe': 0}
-    sold = 0
+    bch = []
+    stk = {'Air Jordan': 0, 'Cortez': 0, 'Zoom Kobe': 0}
+    sd = 0
 
     @classmethod
     def status(cls):
         print('Nike Bangladesh Status:')
-        print(f'Branches Opened:  {cls.branches}\nCurrently Stocked {cls.stocked}\nSold: {cls.sold}')
+        print(f'Branches Opened:  {cls.bch}\nCurrently Stocked {cls.stk}\nSold: {cls.sd}')
 
     def __init__(self, name):
-        NikeBangladesh.branches.append(name)
+        NikeBangladesh.bch.append(name)
         self.name = name
-        self.branch_stocked = {'Air Jordan': 0, 'Cortez': 0, 'Zoom Kobe': 0}
+        self.bstk = {'Air Jordan': 0, 'Cortez': 0, 'Zoom Kobe': 0}
         self.branch_sold = 0
 
     def details(self):
         print(f'{self.name} outlet:')
-        print(f'Products Currently Stocked: {self.branch_stocked}\nSold: {self.branch_sold}')
+        print(f'Products Currently Stocked: {self.bstk}\nSold: {self.branch_sold}')
 
     def restock_products(self, product):
-        for item, quantity in product.items():
-            NikeBangladesh.stocked[item] += quantity
-            self.branch_stocked[item] += quantity
+        for item, qun in product.items():
+            NikeBangladesh.stk[item] += qun
+            self.bstk[item] += qun
 
     def product_sold(self, product):
-        for item, quantity in product.items():
-            NikeBangladesh.stocked[item] -= quantity
-            self.branch_stocked[item] -= quantity
-            NikeBangladesh.sold += quantity
-            self.branch_sold += quantity
+        for item, quan in product.items():
+            NikeBangladesh.stk[item] -= quan
+            self.bstk[item] -= quan
+            NikeBangladesh.sd += quan
+            self.branch_sold += quan
 
 
 print("xxxxxxxxxxxxxx1xxxxxxxxxxxxxxxx")

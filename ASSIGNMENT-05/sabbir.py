@@ -3,7 +3,6 @@ class Train:
   def __init__(self,name,*dis):
     self.name=name
     self.route=dis
-    #print(self.route)
     self.start=dis[0]
     self.destination=dis[-1]
     self.trps=[]

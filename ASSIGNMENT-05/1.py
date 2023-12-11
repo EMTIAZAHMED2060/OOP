@@ -20,28 +20,51 @@ class Teacher:
         for course in self.__courses:
             print(course.name)
 
+class Student:
+    ID = 0
 
+    def __init__(self, name, department, age, cgpa):
+        self.name = name
+        self.department = department
+        self.age = age
+        self.cgpa = cgpa
+        Student.ID += 1
+        self.ID = Student.ID
 
-    
-t1 = Teacher("Saad Abdullah", "CSE")
-t2 = Teacher("Mumit Khan", "CSE")
-t3 = Teacher("Sadia Kazi", "CSE")                          
-c1 = Course("CSE 110 Programming Language I")                           
-c2 = Course("CSE 111 Programming Language-II")                           
-c3 = Course("CSE 220 Data Structures")                           
-c4 = Course("CSE 221 Algorithms")                           
-c5 = Course("CSE 230 Discrete Mathematics")                           
-c6 = Course("CSE 310 Object Oriented Programming")                           
-c7 = Course("CSE 320 Data Communications")                          
-c8 = Course("CSE 340 Computer Architecture") 
-t1.addCourse(c1)
-t1.addCourse(c2)
-t2.addCourse(c3)
-t2.addCourse(c4)
-t2.addCourse(c5)
-t3.addCourse(c6)
-t3.addCourse(c7)
-t3.addCourse(c8)
-t1.printDetail()
-t2.printDetail()
-t3.printDetail()
+    def showDetails(self):
+        print("ID:", self.ID)
+        print("Name:", self.name)
+        print("Department:", self.department)
+        print("Age:", self.age)
+        print("CGPA:", self.cgpa)
+
+    @classmethod
+    def from_String(cls, details):
+        name, department, age, cgpa = details.split("-")
+        age = int(age)
+        cgpa = float(cgpa)
+        return cls(name, department, age, cgpa)
+
+s1 = Student("Samin", "CSE", 21, 3.91)
+s1.showDetails()
+print("-----------------------")
+s2 = Student("Fahim", "ECE", 21, 3.85)
+s2.showDetails()
+print("-----------------------")
+s3 = Student("Tahura", "EEE", 22, 3.01)
+s3.showDetails() 
+print("-----------------------")
+s4 = Student.from_String("Sumaiya-BBA-23-3.96")
+s4.showDetails() 
+
+# Difference between class variable and instance variable:
+print("Difference between class variable and instance variable:")
+print("A class variable is shared among all instances of a class, while an instance variable is unique to each instance.")
+print("Class variables are defined outside of any methods in the class, and they are accessed using the class name.")
+print("Instance variables are defined within methods or the constructor, and they are accessed using the instance name.")
+
+# Difference between instance method and class method:
+print("Difference between instance method and class method:")
+print("An instance method operates on an instance of a class and can access and modify instance variables.")
+print("A class method operates on the class itself and can access and modify class variables.")
+print("Instance methods are defined without the @classmethod decorator, while class methods are defined with the @classmethod decorator.")
