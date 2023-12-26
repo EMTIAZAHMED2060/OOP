@@ -16,7 +16,7 @@ aLL lab assignment homework part...
 [Lab-07_ Inheritance.pdf](https://github.com/EMTIAZAHMED2060/OOP/files/13764110/Lab-07_.Inheritance.pdf)
 
 
-==============================================================================MID=============================================
+====================================================MID=============================================
 
 [CSE111 Mid Summer-22 Set-A.pdf](https://github.com/EMTIAZAHMED2060/OOP/files/13769565/CSE111.Mid.Summer-22.Set-A.pdf)
 [CSE111 Mid Summer-22 Set-B.pdf](https://github.com/EMTIAZAHMED2060/OOP/files/13769555/CSE111.Mid.Summer-22.Set-B.pdf)
@@ -32,7 +32,7 @@ aLL lab assignment homework part...
 
 
 
-===========================================================================FINAL===============================================
+====================================================FINAL===============================================
 
 
 [CSE111 Summer 22 Final Question.pdf](https://github.com/EMTIAZAHMED2060/OOP/files/13769607/CSE111.Summer.22.Final.Question.pdf)
